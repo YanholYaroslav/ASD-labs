@@ -1,0 +1,69 @@
+Янголь Ярослав / Комп. мех / 2 курс
+
+a)
+1   k += 1          |   4
+2   i = n           |   2
+3   while i > 0:    |   3 * (n + 1)
+4       i -= 1      |   4 * n
+
+T(n) = 7n + 9
+
+
+b)
+1   i = n           |   2
+2   while i > 1:    |   3 * (floor(log2(n))) + 1)
+3       k += 1      |   4 * (floor(log2(n)))
+4       i //=2      |   4 * (floor(log2(n)))
+
+T(n) = 11(floor(log2(n))) + 5
+
+
+c)
+1   i = 0               |   2
+2   while i < n:        |   3 * (ceil(n/2) + 1)
+3       j = 0           |   2 * (ceil(n/2))
+4       while j < n:    |   3 * (ceil(n/2) + 1) * (ceil(n/2))
+5           k += 1      |   4 * (ceil(n/2)) * (ceil(n/2))
+6           j += 2      |   4 * (ceil(n/2)) * (ceil(n/2))
+7       i += 2          |   4 * (ceil(n/2))
+
+T(n) = 11*(ceil(n/2))^2 + 12*(ceil(n/2)) + 5
+
+
+d)
+1   i = 0                   |   2
+2   while i < n:            |   3 * (n + 1)
+3       j = 0               |   2 * n
+4       while j < i * i:    |   3 * (SUM[i=0, n](i^2 + 1)) * n
+5           k += 1          |   4 * (SUM[i=0, n](i^2)) * n
+6           j += 1          |   4 * (SUM[i=0, n](i^2)) * n
+7       i += 1              |   4 * n
+
+SUM[i=0, n](i^2 + 1) = n^3/3 + n^2/2 + 7n/6 + 1
+SUM[i=0, n](i^2) = n^3/3 + n^2/2 + n/6
+
+T(n) =~ n^4 + ...
+
+
+e)
+1   i = 1                   |   2
+2   while i < n:            |   3 * (ceil(log2(n)) + 1)
+3       j = 1               |   2 * ceil(log2(n))
+4       while j < n:        |   3 * (ceil(log2(n)) + 1) * ceil(log2(n))
+5           k += 1          |   4 * (ceil(log2(n))) * ceil(log2(n))
+6           j *= 2          |   4 * (ceil(log2(n))) * ceil(log2(n))
+7       i *= 2              |   4 * ceil(log2(n))
+
+T(n) = 11*ceil(log2(n))^2 + 12*ceil(log2(n)) + 5
+
+
+f)
+1   i = 1                   |   2
+2   while i < n:            |   3 * (ceil(log2(n)) + 1)
+3       j = i               |   2 * ceil(log2(n))
+4       while j < n:        |   3 * (SUM[j=1, ceil(log2(n))](j + 1)) * ceil(log2(n))
+5           k += 1          |   4 * (SUM[j=1, ceil(log2(n))](j)) * ceil(log2(n))
+6           j *= 2          |   4 * (SUM[j=1, ceil(log2(n))](j)) * ceil(log2(n))
+7       i *= 2              |   4 * ceil(log2(n))
+
+T(n) =~ ceil(log2(n))^2 + ...
