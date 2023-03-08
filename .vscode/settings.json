@@ -1,6 +1,10 @@
 {
     "chatgpt.gpt3.apiKey": "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",
     "files.associations": {
-        "iostream": "cpp"
-    }
+        "iostream": "cpp",
+        "functional": "cpp"
+    },
+    "chatgpt.method": "Browser Auto-login",
+    "chatgpt.emailAddress": "5462004c@gmail.com",
+    "chatgpt.password": "Sdhd097kr"
 }
