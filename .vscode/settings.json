@@ -1,3 +1,6 @@
 {
-    "chatgpt.gpt3.apiKey": "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"
+    "chatgpt.gpt3.apiKey": "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",
+    "files.associations": {
+        "iostream": "cpp"
+    }
 }
