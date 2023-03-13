@@ -1,4 +1,4 @@
-
+from collections import defaultdict
 """
 Реалізуйте каталог деякої бібліотеки.
 Бібліотека може містити кілька книг одного автора.
@@ -7,7 +7,8 @@
 
 def init():
     """ Викликається 1 раз на початку виконання програми. """
-    pass
+    global catalog
+    catalog = defaultdict(list)
 
 
 def addBook(author, title):
@@ -15,7 +16,7 @@ def addBook(author, title):
     :param author: Автор книги
     :param title: Назва книги
     """
-    pass
+    catalog[author].append(title)
 
 
 def find(author, title):
@@ -24,7 +25,7 @@ def find(author, title):
     :param title: Назва книги
     :return: True, якщо книга міститься у бібліотеці та False у іншому разі.
     """
-    return False
+    return title in catalog.get(author, [])
 
 
 def delete(author, title):
@@ -32,7 +33,7 @@ def delete(author, title):
     :param author: Автор
     :param title: Назва книги
     """
-    pass
+    catalog[author].remove(title)
 
 
 def findByAuthor(author):
@@ -41,5 +42,4 @@ def findByAuthor(author):
     :param author: Автор
     :return: Список книг заданого автора у алфавітному порядку.
     """
-    return []
-
+    return sorted(catalog.get(author, []))
